@@ -15,6 +15,7 @@ If you're interested in the actual bones of how I decided to make this work, the
 As always, you can feel free to hit me up on [twitter][twitter], by [email][email], or-of course-track me down on the air. 
 
 73 DE KG7AXD. 
+
 [about]:    /about/
 [email]:    mailto:jason@kg7axd.com
 [twitter]:  http://twitter.com/kg7axd
