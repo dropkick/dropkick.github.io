@@ -2,31 +2,64 @@
  * Site header
  */
 .site-header {
+    background: darken($background-color, 5%);
     border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    border-bottom: 2px solid $grey-color-dark;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
+    padding-bottom: 2px;
     position: relative;
+    .wrapper {
+        border-bottom: 4px solid $grey-color-dark;
+    }
+    .icon-tower {
+        width: 100px;
+        @include media-query($on-palm) {
+           display: inline block;
+           // float: right;
+           opacity: 0.3;
+           position: absolute;
+           right: 12px;
+           top: 10px;
+           width: 27px;
+        }
+    }
 }
 
 .site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
+    display: block;
+    font-family: $sans-bold;
+    font-size: 54px;
+    font-weight: $bold-weight;
+    line-height: em(72,54);
+    letter-spacing: em(2,54);
     margin-bottom: 0;
-    float: left;
+    margin: 8px auto 5px;
+    text-align: center;
+    // float: left;
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $hot-color;
+        text-decoration: none;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    @include media-query($on-palm) {
+        font-size: 33px;
+        margin-bottom: 6px;
     }
 }
 
 .site-nav {
+    @extend .gothic;
     float: right;
+    font-size: 27px;
     line-height: 56px;
-
+    text-align: left;
+    text-transform: uppercase;
     .menu-icon {
         display: none;
     }
@@ -34,25 +67,25 @@
     .page-link {
         color: $text-color;
         line-height: $base-line-height;
-
+        text-decoration: none;
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
-            margin-left: 20px;
+            // margin-left: 20px;
         }
     }
 
     @include media-query($on-palm) {
         position: absolute;
-        top: 9px;
-        right: 30px;
+        top: 11px;
+        left: 15px;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
-        text-align: right;
+        text-align: center;
 
         .menu-icon {
             display: block;
-            float: right;
+            float: left;
             width: 36px;
             height: 26px;
             line-height: 0;
@@ -162,30 +195,72 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding: ($spacing-unit/2) 0 $spacing-unit;
 }
 
 .page-heading {
-    font-size: 20px;
+    @extend .gothic;
+    // border-top: 1px solid $grey-color-dark;
+    color: darken($grey-color-dark, 0%);
+    // font-family: $condensed-bold;
+    font-size: 81px;
+    // font-weight: $normal-weight;
+    letter-spacing: em(0,12);
+    line-height: 1;
+    padding-left: em(0,12);
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .post-list {
     margin-left: 0;
+    letter-spacing: em(3,15);
     list-style: none;
 
     > li {
-        margin-bottom: $spacing-unit;
+    border-top: 1px solid $grey-color-dark;
+    padding-bottom: 1.25em;
+    }
+    p {
+        font-size: 13px;
+        letter-spacing: em(1,15);
+        line-height: (18/13);
+    }
+    h2 {
+        margin:0;
     }
 }
 
 .post-meta {
-    font-size: $small-font-size;
     color: $grey-color;
+    font-family: $sans-bold;
+    font-style: italic;
+    font-size: 10px;
+    // font-size: $small-font-size;
+    font-weight: $bold-weight;
+    letter-spacing: em(6,27);
+    margin: 0 0;
+    padding-left: em(4,12);
+    line-height: 2.25;
+    line-height: 3;
+    text-transform: uppercase;
 }
 
 .post-link {
+    border-top: 1px solid $grey-color-dark;
+    // font-style: italic;
     display: block;
+    font-family: $sans-bold;
     font-size: 24px;
+    font-weight: $heavy-weight;
+    // letter-spacing: em(6,27);
+    letter-spacing: em(9,27);
+    letter-spacing: em(2,27);
+    line-height: (27/24);
+    padding: em(18,27) 0 em(9,27);
+    text-transform: uppercase;
+    text-decoration:none;
 }
 
 
@@ -201,9 +276,23 @@
     font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
+    border-top: 1px solid $grey-color-dark;
+    // font-style: italic;
+    display: block;
+    font-family: $sans-bold;
+    font-size: 24px;
+    font-weight: $heavy-weight;
+    // letter-spacing: em(6,27);
+    letter-spacing: em(9,27);
+    letter-spacing: em(1,27);
+    line-height: (45/42);
+    margin: 0 0 0;
+    padding: 0.25em 0 0;
+    text-transform: uppercase;
 
     @include media-query($on-laptop) {
         font-size: 36px;
+        // font-size: 24px;
     }
 }
 
